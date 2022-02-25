@@ -4,7 +4,7 @@ import { connectToDatabase } from "./_connector";
 
 export default async (req, res) => {
   const db = await connectToDatabase();
-  const entry = await db.db("links.db").collection("links-collection").findOne({
+  const entry = await db.db("links").collection("links-collection").findOne({
     _id: new ObjectId(req.query.id as string)
   });
   if (entry !== null) {

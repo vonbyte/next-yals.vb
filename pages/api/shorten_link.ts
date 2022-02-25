@@ -5,7 +5,7 @@ export default async (req, res) => {
 
   if (req.body !== "" && req.body.link !== "undefined" && req.body.link !==
     "") {
-    const entry = await db.db("links.db").
+    const entry = await db.db("links").
       collection("links_collection").
       insertOne({ link: req.body.link });
     res.statusCode = 201;

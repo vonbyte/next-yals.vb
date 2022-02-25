@@ -2,7 +2,7 @@ import { ObjectId } from "mongodb";
 
 import { connectToDatabase } from "./_connector";
 
-export default async (req, res) => {
+const Redirects = async (req, res) => {
   const db = await connectToDatabase();
   const entry = await db.db("links").collection("links-collection").findOne({
     _id: new ObjectId(req.query.id as string)
@@ -12,3 +12,5 @@ export default async (req, res) => {
   }
   return res.redirect(301, "/");
 }
+
+export default Redirects;

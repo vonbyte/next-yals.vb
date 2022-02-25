@@ -59,7 +59,7 @@ export default function Home () {
           <Title level={5}>Copy &amp; Paste your lenghty link</Title>
           <Form form={form}
                 onFinish={onFinish}
-                onFinishfailed={onFinishFailed}>
+                onFinishFailed={onFinishFailed}>
             <div className={styles.linkField}>
               <div className={styles.linkFieldInput}>
                 <Form.Item name="link" noStyle rules={[{

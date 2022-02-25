@@ -1,6 +1,6 @@
 import { connectToDatabase } from "./_connector";
 
-export default async (req, res) => {
+const ShortenLink = async (req, res) => {
   const db = await connectToDatabase();
 
   if (req.body !== "" && req.body.link !== "undefined" && req.body.link !==
@@ -16,3 +16,5 @@ export default async (req, res) => {
   res.json({ error: "no_link_found", error_description: "No link found" });
 
 };
+
+export default ShortenLink;
